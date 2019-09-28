@@ -1,0 +1,336 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Paper &mdash; Free Website Template, Free HTML5 Template by freehtml5.co</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
+	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="freehtml5.co" />
+	<!--
+	//////////////////////////////////////////////////////
+
+	FREE HTML5 TEMPLATE
+	DESIGNED & DEVELOPED by FreeHTML5.co
+
+	Website: 		http://freehtml5.co/
+	Email: 			info@freehtml5.co
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
+
+	//////////////////////////////////////////////////////
+	 -->
+	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content="" />
+	<meta property="og:image" content="" />
+	<meta property="og:url" content="" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:description" content="" />
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Slab:400,600,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="/Content/papercss/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="/Content/paper/css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="/Content/paper/css/bootstrap.css">
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="/Content/paper/css/magnific-popup.css">
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="/Content/paper/css/flexslider.css">
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="/Content/paper/css/style.css">
+	<!-- Modernizr JS -->
+	<script src="Content/paper/js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+
+	<div class="fh5co-loader"></div>
+
+	<div id="page">
+		<nav class="fh5co-nav" role="navigation">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="top-menu">
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-7 text-left menu-1">
+									<ul>
+										<li><a href="/Home/Index">Anasayfa</a></li>
+
+
+
+										@if (User.Identity.IsAuthenticated)
+										{
+										<li class="has-dropdown active">
+											<a href="/Yazar/Index">Yazar Paneli</a>
+											<ul class="dropdown">
+												<li><a href="/Makale/MakaleEkle">Makale Ekle</a></li>
+												<li><a href="/Yazar/Makalelerim">Makalelerim</a></li>
+
+											</ul>
+										</li>
+										}
+											
+
+
+
+
+											@*<li class="has-dropdown active">
+				<a href="blog.html">Blog</a>
+
+			</li>*@
+
+
+										@if (User.Identity.Name == "admin")
+										{
+											<li class="has-dropdown active">
+												<a href="/Admin/Index">Admin Paneli</a>
+												<ul class="dropdown">
+													<li><a href="/Makale/MakaleEkle">Makale Ekle</a></li>
+													<li><a href="/Kategori/KategoriEkle">Kategori Ekle</a></li>
+													<li><a href="/Etiket/EtiketEkle">Etiket Ekle</a></li>
+													@*<li><a href="/Admin/RolEkle">Rol Ekle</a></li>*@
+													<li><a href="/Admin/KullaniciEkle">Kullanıcı Ekle</a></li>
+													<li><a href="/Admin/YazarOnaylari">Yazar Onayları</a></li>
+													<li><a href="/Admin/YazarSeviye">Yazar Seviyesi</a></li>
+												</ul>
+											</li>
+
+										}
+
+
+
+
+
+
+										
+
+
+
+
+										@if(!User.IsInRole("Yazar") || !User.Identity.IsAuthenticated)
+										{
+											<li>
+												<a href="/Yazar/YazarOl">Yazar Ol</a>
+
+											</li>
+										}
+
+										@if (!User.Identity.IsAuthenticated)
+										{
+											<li>
+												<a href="/Kullanici/UyeOl">Üye Ol</a>
+
+											</li>
+										}
+										
+
+
+
+
+
+
+										@if (!User.Identity.IsAuthenticated)
+										{
+											<li><a href="/Kullanici/GirisYap">Giriş Yap</a></li>
+
+										}
+										else
+										{
+											<li><a href="/Kullanici/CikisYap">Çıkış Yap</a></li>
+
+										}
+									</ul>
+								</div>
+								<div class="col-sm-5">
+									<ul class="fh5co-social-icons">
+										<li><a href="https://twitter.com/login"><i class="icon-twitter-with-circle"></i></a></li>
+										<li><a href="https://tr-tr.facebook.com/login"><i class="icon-facebook-with-circle"></i></a></li>
+										<li><a href=""><i class="icon-linkedin-with-circle"></i></a></li>
+										<li><a href="#"><i class="icon-dribbble-with-circle"></i></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 text-center menu-2">
+						<div id="fh5co-logo">
+							<h1>
+								<a href="/Home/Index">
+									Paper<span>.</span>
+									<small>Blog Theme</small>
+								</a>
+							</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<div id="fh5co-content" class="fh5co-no-pd-top">
+			<div class="container">
+				@RenderSection("Right", false)
+
+				@RenderBody()
+
+				
+
+				<div class="row">
+					<div class="col-md-9 col-padded-right">
+
+					</div>
+
+					<aside id="sidebar">
+						<div class="col-md-3">
+							<div class="side animate-box">
+
+
+							</div>
+							@{
+								Html.RenderAction("EtiketWidget", "Etiket");
+							}
+
+
+							@RenderSection("RightTop", false)
+
+
+
+
+
+							@{
+								Html.RenderAction("KategoriWidget", "Kategori");
+							}
+							@*<div class="side animate-box">
+			<div class="col-md-12 col-md-offset-0 text-center fh5co-heading fh5co-heading-sidebar">
+				<h2><span>Kategoriler</span></h2>
+			</div>
+			<ul class="category">
+				<li><a href="#"><i class="icon-check"></i>Lifestyle</a></li>
+				<li><a href="#"><i class="icon-check"></i>Web Development</a></li>
+				<li><a href="#"><i class="icon-check"></i>Web Design</a></li>
+				<li><a href="#"><i class="icon-check"></i>Nature</a></li>
+				<li><a href="#"><i class="icon-check"></i>Life</a></li>
+				<li><a href="#"><i class="icon-check"></i>Entertainment</a></li>
+			</ul>
+		</div>*@
+							<div class="side animate-box">
+								<div class="col-md-12 col-md-offset-0 text-center fh5co-heading fh5co-heading-sidebar">
+									<h2><span>Güncel Makaleler</span></h2>
+								</div>
+								<div class="blog-entry">
+									<a href="#">
+										<img src="images/blog-1.jpg" class="img-responsive" alt="">
+										<div class="desc">
+											<span class="date">Dec. 25, 2016</span>
+											<h3>Most Beautiful Site in 2016</h3>
+										</div>
+									</a>
+								</div>
+								<div class="blog-entry">
+									<a href="#">
+										<img src="images/blog-2.jpg" class="img-responsive" alt="">
+										<div class="desc">
+											<span class="date">Dec. 25, 2016</span>
+											<h3>Most Beautiful Site in 2016</h3>
+										</div>
+									</a>
+								</div>
+								<div class="blog-entry">
+									<a href="#">
+										<img src="images/blog-1.jpg" class="img-responsive" alt="">
+										<div class="desc">
+											<span class="date">Dec. 25, 2016</span>
+											<h3>Most Beautiful Site in 2016</h3>
+										</div>
+									</a>
+								</div>
+							</div>
+
+
+
+							@RenderSection("RightBottom", false)
+						</div>
+					</aside>
+				</div>
+			</div>
+		</div>
+
+		<footer id="fh5co-footer" role="contentinfo">
+			<div class="container">
+				<div class="row row-pb-md">
+					<div class="col-md-4 fh5co-widget">
+						<h4>MyBlog</h4>
+						<p>Burada bilişim ile ilgili bilgileri paylaşabildiğimiz bir blog sitesidir</p>
+					</div>
+					<div class="col-md-4 col-md-push-1">
+						<h4>Links</h4>
+						<ul class="fh5co-footer-links">
+							<li><a href="/Home/Index">Anasayfa</a></li>
+							@*<li><a href="#">Blog</a></li>*@
+							<li><a href="/Yazar/YazarOl">Yazar Ol</a></li>
+							<li><a href="/Kullanici/UyeOl">Üye Ol</a></li>
+							@*<li><a href="#">Contact</a></li>*@
+						</ul>
+					</div>
+					<div class="col-md-4 col-md-push-1">
+						<h4>Contact Information</h4>
+						<ul class="fh5co-footer-links">
+							<li>İstanbul @*<br> Suite 721 New York NY 10016</li>*@
+							<li><a href="tel://1234567920">+ 1235 2355 98</a></li>
+							@*<li><a href="mailto:info@yoursite.com">info@yoursite.com</a></li>
+							<li><a href="http://freehtml5.co">FreeHTML5.co</a></li>*@
+						</ul>
+					</div>
+				</div>
+				<div class="row copyright">
+					<div class="col-md-12 text-center">
+						<p>
+							<small class="block">&copy; 2019 Hamit Kaya</small>
+							@*<small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small>*@
+						</p>
+						<p>
+							<ul class="fh5co-social-icons">
+								<li><a href="https://twitter.com/login"><i class="icon-twitter"></i></a></li>
+								<li><a href="https://tr-tr.facebook.com/login"><i class="icon-facebook"></i></a></li>
+								<li><a href="#"><i class="icon-linkedin"></i></a></li>
+								<li><a href="#"><i class="icon-dribbble"></i></a></li>
+							</ul>
+						</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+	<!-- jQuery -->
+	<script src="/Content/paper/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="/Content/paper/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="/Content/paper/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="/Content/paper/js/jquery.waypoints.min.js"></script>
+	<!-- Flexslider -->
+	<script src="/Content/paper/js/jquery.flexslider-min.js"></script>
+	<!-- Magnific Popup -->
+	<script src="/Content/paper/js/jquery.magnific-popup.min.js"></script>
+	<script src="/Content/paper/js/magnific-popup-options.js"></script>
+	<!-- Main -->
+	<script src="/Content/paper/js/main.js"></script>
+</body>
+</html>

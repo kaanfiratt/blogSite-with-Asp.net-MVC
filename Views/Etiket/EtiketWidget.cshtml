@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Myblogg.Etiket>
+@{
+	Layout = null;
+}
+
+<div>
+	<div class="col-md-12 col-md-offset-0 text-center fh5co-heading fh5co-heading-sidebar">
+		<h2><span>Tag</span></h2>
+	</div>
+	<ul class="category">
+		@foreach (var etk in Model)
+		{
+			<li><a href="/Etiket/Index/@etk.ID">@etk.EtiketAdi (@etk.Makale.Count)<i class="icon-check"></i></a></li>
+		}
+
+	</ul>
+</div>

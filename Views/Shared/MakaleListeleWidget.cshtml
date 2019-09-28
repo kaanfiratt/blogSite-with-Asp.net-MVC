@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Myblogg.Makale>
+
+@{
+
+	Layout = null;
+}
+<div id="fh5co-content" class="fh5co-no-pd-top">
+	<div class="container">
+		<div class="row animate-box">
+
+			<div class="row">
+				<div class="col-md-9 col-padded-right">
+					<div class="row">
+						@foreach (var mklGetir in Model)
+						{
+							<div class="col-md-12">
+								<div class="fh5co-blog animate-box">
+									<div class="title title-pin text-center">
+										<span class="posted-on">@mklGetir.YayimTarihi.</span>
+										<h3><a href="Makale/Detay/@mklGetir.id">@mklGetir.Baslik</a></h3>
+
+										@*<span class="category">Lifestyle</span>*@
+									</div>
+									<a href="/Makale/Detay/@mklGetir.id"><img class="img-responsive" src="@mklGetir.Resim.BuyukResimYol" alt=""></a>
+									<div class="blog-text text-center">
+										<p>@mklGetir.Icerik</p>
+										<ul class="fh5co-social-icons">
+											<li>Share:</li>
+											<li><a href="#"><i class="icon-twitter-with-circle"></i></a></li>
+											<li><a href="#"><i class="icon-facebook-with-circle"></i></a></li>
+											<li><a href="#"><i class="icon-linkedin-with-circle"></i></a></li>
+											<li><a href="#"><i class="icon-dribbble-with-circle"></i></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+
+						}
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
